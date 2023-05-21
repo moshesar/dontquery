@@ -1,0 +1,21 @@
+Table: spaceships
+- Column: spaceship_id, Data Type: integer, Constraint: PK
+- Column: year, Data Type: integer, Constraint:
+- Column: max_speed, Data Type: integer, Constraint:
+- Column: name, Data Type: character varying, Constraint:
+- Column: manufacturer, Data Type: character varying, Constraint:
+Table: crew_members
+- Column: crew_member_id, Data Type: integer, Constraint: PK
+- Column: spaceship_id, Data Type: integer, Constraint: FK: spaceships.spaceship_id
+- Column: name, Data Type: character varying, Constraint:
+- Column: rank, Data Type: character varying, Constraint:
+Table: flights
+- Column: flight_id, Data Type: integer, Constraint: PK
+- Column: spaceship_id, Data Type: integer, Constraint: FK: spaceships.spaceship_id
+- Column: start_date, Data Type: date, Constraint:
+- Column: end_date, Data Type: date, Constraint:
+- Column: destination, Data Type: character varying, Constraint:
+Table: passengers
+- Column: passenger_id, Data Type: integer, Constraint: PK
+- Column: flight_id, Data Type: integer, Constraint: FK: flights.flight_id
+- Column: name, Data Type: character varying, Constraint:
